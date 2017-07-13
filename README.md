@@ -373,7 +373,7 @@ def output(x_tensor, num_outputs):
     : return: A 2-D tensor where the second dimension is num_outputs.
     """
     # TODO: Implement Function
-    return tf.contrib.layers.fully_connected(x_tensor, num_outputs)
+    return tf.contrib.layers.fully_connected(x_tensor, num_outputs, activation_fn=None)
 
 """
 DON'T MODIFY ANYTHING IN THIS CELL THAT IS BELOW THIS LINE
@@ -596,46 +596,46 @@ with tf.Session() as sess:
 ```
 
     Checking the Training on a Single Batch...
-    Epoch  1, CIFAR-10 Batch 1:  2.20839 0.2356
-    Epoch  2, CIFAR-10 Batch 1:  2.05485 0.3112
-    Epoch  3, CIFAR-10 Batch 1:  1.86368 0.3686
-    Epoch  4, CIFAR-10 Batch 1:  1.78836 0.3918
-    Epoch  5, CIFAR-10 Batch 1:  1.68382 0.4348
-    Epoch  6, CIFAR-10 Batch 1:  1.60837 0.4482
-    Epoch  7, CIFAR-10 Batch 1:  1.48913 0.482
-    Epoch  8, CIFAR-10 Batch 1:  1.41116 0.4954
-    Epoch  9, CIFAR-10 Batch 1:  1.33833 0.5072
-    Epoch 10, CIFAR-10 Batch 1:  1.26997 0.5284
-    Epoch 11, CIFAR-10 Batch 1:  1.21405 0.539
-    Epoch 12, CIFAR-10 Batch 1:  1.22781 0.5262
-    Epoch 13, CIFAR-10 Batch 1:  1.09626 0.5604
-    Epoch 14, CIFAR-10 Batch 1:  1.06775 0.5554
-    Epoch 15, CIFAR-10 Batch 1:  1.01619 0.5656
-    Epoch 16, CIFAR-10 Batch 1:  0.985815 0.5754
-    Epoch 17, CIFAR-10 Batch 1:  0.929611 0.5832
-    Epoch 18, CIFAR-10 Batch 1:  0.940414 0.5756
-    Epoch 19, CIFAR-10 Batch 1:  0.937505 0.564
-    Epoch 20, CIFAR-10 Batch 1:  0.842766 0.5908
-    Epoch 21, CIFAR-10 Batch 1:  0.799383 0.6008
-    Epoch 22, CIFAR-10 Batch 1:  0.766188 0.6014
-    Epoch 23, CIFAR-10 Batch 1:  0.722593 0.6076
-    Epoch 24, CIFAR-10 Batch 1:  0.743669 0.5974
-    Epoch 25, CIFAR-10 Batch 1:  0.668527 0.6144
-    Epoch 26, CIFAR-10 Batch 1:  0.652647 0.6104
-    Epoch 27, CIFAR-10 Batch 1:  0.650644 0.6006
-    Epoch 28, CIFAR-10 Batch 1:  0.614604 0.6068
-    Epoch 29, CIFAR-10 Batch 1:  0.58221 0.6134
-    Epoch 30, CIFAR-10 Batch 1:  0.554422 0.611
-    Epoch 31, CIFAR-10 Batch 1:  0.531567 0.616
-    Epoch 32, CIFAR-10 Batch 1:  0.514849 0.6212
-    Epoch 33, CIFAR-10 Batch 1:  0.491687 0.6266
-    Epoch 34, CIFAR-10 Batch 1:  0.451893 0.6252
-    Epoch 35, CIFAR-10 Batch 1:  0.443961 0.6262
-    Epoch 36, CIFAR-10 Batch 1:  0.436327 0.6184
-    Epoch 37, CIFAR-10 Batch 1:  0.42039 0.6148
-    Epoch 38, CIFAR-10 Batch 1:  0.415377 0.6258
-    Epoch 39, CIFAR-10 Batch 1:  0.383 0.6316
-    Epoch 40, CIFAR-10 Batch 1:  0.359801 0.6382
+    Epoch  1, CIFAR-10 Batch 1:  2.16415 0.234
+    Epoch  2, CIFAR-10 Batch 1:  1.99352 0.3154
+    Epoch  3, CIFAR-10 Batch 1:  1.83268 0.3694
+    Epoch  4, CIFAR-10 Batch 1:  1.74429 0.3884
+    Epoch  5, CIFAR-10 Batch 1:  1.66053 0.4168
+    Epoch  6, CIFAR-10 Batch 1:  1.59822 0.4344
+    Epoch  7, CIFAR-10 Batch 1:  1.52216 0.4524
+    Epoch  8, CIFAR-10 Batch 1:  1.48215 0.4608
+    Epoch  9, CIFAR-10 Batch 1:  1.40063 0.485
+    Epoch 10, CIFAR-10 Batch 1:  1.36138 0.5028
+    Epoch 11, CIFAR-10 Batch 1:  1.30815 0.5158
+    Epoch 12, CIFAR-10 Batch 1:  1.23955 0.5294
+    Epoch 13, CIFAR-10 Batch 1:  1.19615 0.5474
+    Epoch 14, CIFAR-10 Batch 1:  1.14775 0.5522
+    Epoch 15, CIFAR-10 Batch 1:  1.17475 0.537
+    Epoch 16, CIFAR-10 Batch 1:  1.11416 0.5444
+    Epoch 17, CIFAR-10 Batch 1:  1.07549 0.5582
+    Epoch 18, CIFAR-10 Batch 1:  1.01537 0.5678
+    Epoch 19, CIFAR-10 Batch 1:  1.00924 0.5692
+    Epoch 20, CIFAR-10 Batch 1:  0.961232 0.5688
+    Epoch 21, CIFAR-10 Batch 1:  0.916566 0.5822
+    Epoch 22, CIFAR-10 Batch 1:  0.938028 0.563
+    Epoch 23, CIFAR-10 Batch 1:  0.848046 0.5882
+    Epoch 24, CIFAR-10 Batch 1:  0.849767 0.587
+    Epoch 25, CIFAR-10 Batch 1:  0.845707 0.579
+    Epoch 26, CIFAR-10 Batch 1:  0.784807 0.592
+    Epoch 27, CIFAR-10 Batch 1:  0.736665 0.6032
+    Epoch 28, CIFAR-10 Batch 1:  0.743103 0.5946
+    Epoch 29, CIFAR-10 Batch 1:  0.757316 0.587
+    Epoch 30, CIFAR-10 Batch 1:  0.680976 0.5914
+    Epoch 31, CIFAR-10 Batch 1:  0.691691 0.5814
+    Epoch 32, CIFAR-10 Batch 1:  0.678632 0.5926
+    Epoch 33, CIFAR-10 Batch 1:  0.647683 0.6052
+    Epoch 34, CIFAR-10 Batch 1:  0.644398 0.585
+    Epoch 35, CIFAR-10 Batch 1:  0.612985 0.5982
+    Epoch 36, CIFAR-10 Batch 1:  0.565636 0.606
+    Epoch 37, CIFAR-10 Batch 1:  0.562469 0.6088
+    Epoch 38, CIFAR-10 Batch 1:  0.52209 0.6106
+    Epoch 39, CIFAR-10 Batch 1:  0.478937 0.618
+    Epoch 40, CIFAR-10 Batch 1:  0.454209 0.6242
 
 
 ### Fully Train the Model
@@ -669,206 +669,206 @@ with tf.Session() as sess:
 ```
 
     Training...
-    Epoch  1, CIFAR-10 Batch 1:  2.26644 0.1048
-    Epoch  1, CIFAR-10 Batch 2:  2.18984 0.1934
-    Epoch  1, CIFAR-10 Batch 3:  2.06796 0.2764
-    Epoch  1, CIFAR-10 Batch 4:  1.86361 0.339
-    Epoch  1, CIFAR-10 Batch 5:  1.76619 0.3838
-    Epoch  2, CIFAR-10 Batch 1:  1.70808 0.4208
-    Epoch  2, CIFAR-10 Batch 2:  1.49604 0.4456
-    Epoch  2, CIFAR-10 Batch 3:  1.36538 0.459
-    Epoch  2, CIFAR-10 Batch 4:  1.3562 0.4918
-    Epoch  2, CIFAR-10 Batch 5:  1.34646 0.5012
-    Epoch  3, CIFAR-10 Batch 1:  1.5007 0.4824
-    Epoch  3, CIFAR-10 Batch 2:  1.30739 0.5138
-    Epoch  3, CIFAR-10 Batch 3:  1.15607 0.5416
-    Epoch  3, CIFAR-10 Batch 4:  1.17064 0.5396
-    Epoch  3, CIFAR-10 Batch 5:  1.19366 0.5478
-    Epoch  4, CIFAR-10 Batch 1:  1.22953 0.5762
-    Epoch  4, CIFAR-10 Batch 2:  1.11853 0.5808
-    Epoch  4, CIFAR-10 Batch 3:  1.04487 0.5762
-    Epoch  4, CIFAR-10 Batch 4:  1.00432 0.582
-    Epoch  4, CIFAR-10 Batch 5:  1.0398 0.599
-    Epoch  5, CIFAR-10 Batch 1:  1.11 0.6058
-    Epoch  5, CIFAR-10 Batch 2:  1.01918 0.6134
-    Epoch  5, CIFAR-10 Batch 3:  0.936147 0.6148
-    Epoch  5, CIFAR-10 Batch 4:  0.862216 0.6228
-    Epoch  5, CIFAR-10 Batch 5:  0.926288 0.6278
-    Epoch  6, CIFAR-10 Batch 1:  1.04483 0.6146
-    Epoch  6, CIFAR-10 Batch 2:  0.937061 0.6282
-    Epoch  6, CIFAR-10 Batch 3:  0.879505 0.6354
-    Epoch  6, CIFAR-10 Batch 4:  0.816747 0.6434
-    Epoch  6, CIFAR-10 Batch 5:  0.848308 0.6398
-    Epoch  7, CIFAR-10 Batch 1:  0.927025 0.6488
-    Epoch  7, CIFAR-10 Batch 2:  0.872887 0.6442
-    Epoch  7, CIFAR-10 Batch 3:  0.780739 0.6552
-    Epoch  7, CIFAR-10 Batch 4:  0.749406 0.6472
-    Epoch  7, CIFAR-10 Batch 5:  0.778376 0.6638
-    Epoch  8, CIFAR-10 Batch 1:  0.910495 0.6548
-    Epoch  8, CIFAR-10 Batch 2:  0.815258 0.6662
-    Epoch  8, CIFAR-10 Batch 3:  0.757325 0.6672
-    Epoch  8, CIFAR-10 Batch 4:  0.707313 0.6574
-    Epoch  8, CIFAR-10 Batch 5:  0.749801 0.6718
-    Epoch  9, CIFAR-10 Batch 1:  0.867035 0.6646
-    Epoch  9, CIFAR-10 Batch 2:  0.78053 0.672
-    Epoch  9, CIFAR-10 Batch 3:  0.748543 0.6716
-    Epoch  9, CIFAR-10 Batch 4:  0.646256 0.6724
-    Epoch  9, CIFAR-10 Batch 5:  0.700091 0.687
-    Epoch 10, CIFAR-10 Batch 1:  0.784634 0.684
-    Epoch 10, CIFAR-10 Batch 2:  0.760308 0.6742
-    Epoch 10, CIFAR-10 Batch 3:  0.694529 0.6798
-    Epoch 10, CIFAR-10 Batch 4:  0.62654 0.677
-    Epoch 10, CIFAR-10 Batch 5:  0.631642 0.6912
-    Epoch 11, CIFAR-10 Batch 1:  0.748915 0.6934
-    Epoch 11, CIFAR-10 Batch 2:  0.696043 0.7024
-    Epoch 11, CIFAR-10 Batch 3:  0.637693 0.6892
-    Epoch 11, CIFAR-10 Batch 4:  0.559136 0.7036
-    Epoch 11, CIFAR-10 Batch 5:  0.608406 0.6956
-    Epoch 12, CIFAR-10 Batch 1:  0.705016 0.7016
-    Epoch 12, CIFAR-10 Batch 2:  0.658175 0.7046
-    Epoch 12, CIFAR-10 Batch 3:  0.58912 0.7016
-    Epoch 12, CIFAR-10 Batch 4:  0.551488 0.6936
-    Epoch 12, CIFAR-10 Batch 5:  0.572508 0.6964
-    Epoch 13, CIFAR-10 Batch 1:  0.700454 0.6962
-    Epoch 13, CIFAR-10 Batch 2:  0.670939 0.6868
-    Epoch 13, CIFAR-10 Batch 3:  0.557069 0.7082
-    Epoch 13, CIFAR-10 Batch 4:  0.503712 0.704
-    Epoch 13, CIFAR-10 Batch 5:  0.565553 0.6938
-    Epoch 14, CIFAR-10 Batch 1:  0.687364 0.6962
-    Epoch 14, CIFAR-10 Batch 2:  0.645001 0.684
-    Epoch 14, CIFAR-10 Batch 3:  0.535452 0.7086
-    Epoch 14, CIFAR-10 Batch 4:  0.484221 0.7176
-    Epoch 14, CIFAR-10 Batch 5:  0.533996 0.7064
-    Epoch 15, CIFAR-10 Batch 1:  0.640887 0.708
-    Epoch 15, CIFAR-10 Batch 2:  0.62007 0.6936
-    Epoch 15, CIFAR-10 Batch 3:  0.545584 0.7076
-    Epoch 15, CIFAR-10 Batch 4:  0.474093 0.7138
-    Epoch 15, CIFAR-10 Batch 5:  0.504415 0.7052
-    Epoch 16, CIFAR-10 Batch 1:  0.601732 0.6966
-    Epoch 16, CIFAR-10 Batch 2:  0.588128 0.699
-    Epoch 16, CIFAR-10 Batch 3:  0.495409 0.715
-    Epoch 16, CIFAR-10 Batch 4:  0.453221 0.716
-    Epoch 16, CIFAR-10 Batch 5:  0.473529 0.7158
-    Epoch 17, CIFAR-10 Batch 1:  0.572565 0.7118
-    Epoch 17, CIFAR-10 Batch 2:  0.525017 0.6992
-    Epoch 17, CIFAR-10 Batch 3:  0.488399 0.713
-    Epoch 17, CIFAR-10 Batch 4:  0.43739 0.722
-    Epoch 17, CIFAR-10 Batch 5:  0.454483 0.7134
-    Epoch 18, CIFAR-10 Batch 1:  0.525643 0.7204
-    Epoch 18, CIFAR-10 Batch 2:  0.547957 0.7096
-    Epoch 18, CIFAR-10 Batch 3:  0.439253 0.7216
-    Epoch 18, CIFAR-10 Batch 4:  0.409135 0.7202
-    Epoch 18, CIFAR-10 Batch 5:  0.441351 0.7094
-    Epoch 19, CIFAR-10 Batch 1:  0.533355 0.7192
-    Epoch 19, CIFAR-10 Batch 2:  0.52609 0.715
-    Epoch 19, CIFAR-10 Batch 3:  0.431208 0.7232
-    Epoch 19, CIFAR-10 Batch 4:  0.411393 0.7246
-    Epoch 19, CIFAR-10 Batch 5:  0.40597 0.721
-    Epoch 20, CIFAR-10 Batch 1:  0.5027 0.722
-    Epoch 20, CIFAR-10 Batch 2:  0.489178 0.7202
-    Epoch 20, CIFAR-10 Batch 3:  0.40363 0.7248
-    Epoch 20, CIFAR-10 Batch 4:  0.433092 0.7174
-    Epoch 20, CIFAR-10 Batch 5:  0.395578 0.7258
-    Epoch 21, CIFAR-10 Batch 1:  0.505088 0.7076
-    Epoch 21, CIFAR-10 Batch 2:  0.500681 0.7098
-    Epoch 21, CIFAR-10 Batch 3:  0.394329 0.7292
-    Epoch 21, CIFAR-10 Batch 4:  0.385215 0.7248
-    Epoch 21, CIFAR-10 Batch 5:  0.408834 0.7214
-    Epoch 22, CIFAR-10 Batch 1:  0.479305 0.7136
-    Epoch 22, CIFAR-10 Batch 2:  0.469444 0.705
-    Epoch 22, CIFAR-10 Batch 3:  0.404876 0.7272
-    Epoch 22, CIFAR-10 Batch 4:  0.374555 0.725
-    Epoch 22, CIFAR-10 Batch 5:  0.387102 0.7274
-    Epoch 23, CIFAR-10 Batch 1:  0.432242 0.717
-    Epoch 23, CIFAR-10 Batch 2:  0.435444 0.71
-    Epoch 23, CIFAR-10 Batch 3:  0.360219 0.7268
-    Epoch 23, CIFAR-10 Batch 4:  0.340634 0.7284
-    Epoch 23, CIFAR-10 Batch 5:  0.370876 0.7246
-    Epoch 24, CIFAR-10 Batch 1:  0.409774 0.7298
-    Epoch 24, CIFAR-10 Batch 2:  0.42413 0.709
-    Epoch 24, CIFAR-10 Batch 3:  0.357591 0.7254
-    Epoch 24, CIFAR-10 Batch 4:  0.35936 0.7156
-    Epoch 24, CIFAR-10 Batch 5:  0.334939 0.7302
-    Epoch 25, CIFAR-10 Batch 1:  0.426135 0.716
-    Epoch 25, CIFAR-10 Batch 2:  0.424335 0.7228
-    Epoch 25, CIFAR-10 Batch 3:  0.363651 0.7234
-    Epoch 25, CIFAR-10 Batch 4:  0.326693 0.7226
-    Epoch 25, CIFAR-10 Batch 5:  0.331053 0.7326
-    Epoch 26, CIFAR-10 Batch 1:  0.399775 0.728
-    Epoch 26, CIFAR-10 Batch 2:  0.440295 0.7116
-    Epoch 26, CIFAR-10 Batch 3:  0.347629 0.7288
-    Epoch 26, CIFAR-10 Batch 4:  0.332961 0.727
-    Epoch 26, CIFAR-10 Batch 5:  0.320168 0.7316
-    Epoch 27, CIFAR-10 Batch 1:  0.385153 0.7236
-    Epoch 27, CIFAR-10 Batch 2:  0.375363 0.721
-    Epoch 27, CIFAR-10 Batch 3:  0.329178 0.7346
-    Epoch 27, CIFAR-10 Batch 4:  0.33314 0.7328
-    Epoch 27, CIFAR-10 Batch 5:  0.30379 0.7308
-    Epoch 28, CIFAR-10 Batch 1:  0.355816 0.7234
-    Epoch 28, CIFAR-10 Batch 2:  0.37654 0.7306
-    Epoch 28, CIFAR-10 Batch 3:  0.344294 0.7236
-    Epoch 28, CIFAR-10 Batch 4:  0.320901 0.733
-    Epoch 28, CIFAR-10 Batch 5:  0.320935 0.7198
-    Epoch 29, CIFAR-10 Batch 1:  0.349415 0.732
-    Epoch 29, CIFAR-10 Batch 2:  0.361181 0.727
-    Epoch 29, CIFAR-10 Batch 3:  0.348927 0.7248
-    Epoch 29, CIFAR-10 Batch 4:  0.322843 0.7236
-    Epoch 29, CIFAR-10 Batch 5:  0.280504 0.7232
-    Epoch 30, CIFAR-10 Batch 1:  0.337722 0.7292
-    Epoch 30, CIFAR-10 Batch 2:  0.337144 0.727
-    Epoch 30, CIFAR-10 Batch 3:  0.311284 0.7238
-    Epoch 30, CIFAR-10 Batch 4:  0.296624 0.7236
-    Epoch 30, CIFAR-10 Batch 5:  0.286693 0.7128
-    Epoch 31, CIFAR-10 Batch 1:  0.327052 0.7324
-    Epoch 31, CIFAR-10 Batch 2:  0.330088 0.7274
-    Epoch 31, CIFAR-10 Batch 3:  0.307315 0.721
-    Epoch 31, CIFAR-10 Batch 4:  0.292394 0.7244
-    Epoch 31, CIFAR-10 Batch 5:  0.270723 0.7124
-    Epoch 32, CIFAR-10 Batch 1:  0.314732 0.7284
-    Epoch 32, CIFAR-10 Batch 2:  0.326016 0.7198
-    Epoch 32, CIFAR-10 Batch 3:  0.299991 0.7224
-    Epoch 32, CIFAR-10 Batch 4:  0.290309 0.718
-    Epoch 32, CIFAR-10 Batch 5:  0.298008 0.7072
-    Epoch 33, CIFAR-10 Batch 1:  0.291823 0.7386
-    Epoch 33, CIFAR-10 Batch 2:  0.29989 0.7278
-    Epoch 33, CIFAR-10 Batch 3:  0.29137 0.7282
-    Epoch 33, CIFAR-10 Batch 4:  0.329368 0.7158
-    Epoch 33, CIFAR-10 Batch 5:  0.275786 0.7052
-    Epoch 34, CIFAR-10 Batch 1:  0.308699 0.7328
-    Epoch 34, CIFAR-10 Batch 2:  0.298244 0.7326
-    Epoch 34, CIFAR-10 Batch 3:  0.286472 0.722
-    Epoch 34, CIFAR-10 Batch 4:  0.295097 0.7188
-    Epoch 34, CIFAR-10 Batch 5:  0.257484 0.7162
-    Epoch 35, CIFAR-10 Batch 1:  0.281071 0.7352
-    Epoch 35, CIFAR-10 Batch 2:  0.28061 0.7224
-    Epoch 35, CIFAR-10 Batch 3:  0.276674 0.7266
-    Epoch 35, CIFAR-10 Batch 4:  0.294101 0.725
-    Epoch 35, CIFAR-10 Batch 5:  0.254431 0.7146
-    Epoch 36, CIFAR-10 Batch 1:  0.258761 0.73
-    Epoch 36, CIFAR-10 Batch 2:  0.283166 0.727
-    Epoch 36, CIFAR-10 Batch 3:  0.284606 0.716
-    Epoch 36, CIFAR-10 Batch 4:  0.274853 0.7238
-    Epoch 36, CIFAR-10 Batch 5:  0.213426 0.7244
-    Epoch 37, CIFAR-10 Batch 1:  0.257589 0.7332
-    Epoch 37, CIFAR-10 Batch 2:  0.289893 0.7228
-    Epoch 37, CIFAR-10 Batch 3:  0.244916 0.727
-    Epoch 37, CIFAR-10 Batch 4:  0.25003 0.724
-    Epoch 37, CIFAR-10 Batch 5:  0.230153 0.7194
-    Epoch 38, CIFAR-10 Batch 1:  0.230204 0.7414
-    Epoch 38, CIFAR-10 Batch 2:  0.257993 0.735
-    Epoch 38, CIFAR-10 Batch 3:  0.238654 0.726
-    Epoch 38, CIFAR-10 Batch 4:  0.235934 0.7276
-    Epoch 38, CIFAR-10 Batch 5:  0.218076 0.7244
-    Epoch 39, CIFAR-10 Batch 1:  0.230819 0.7336
-    Epoch 39, CIFAR-10 Batch 2:  0.252769 0.7318
-    Epoch 39, CIFAR-10 Batch 3:  0.229544 0.7298
-    Epoch 39, CIFAR-10 Batch 4:  0.222404 0.7262
-    Epoch 39, CIFAR-10 Batch 5:  0.184745 0.74
-    Epoch 40, CIFAR-10 Batch 1:  0.218605 0.7342
-    Epoch 40, CIFAR-10 Batch 2:  0.264836 0.7262
-    Epoch 40, CIFAR-10 Batch 3:  0.230024 0.7178
-    Epoch 40, CIFAR-10 Batch 4:  0.251534 0.716
-    Epoch 40, CIFAR-10 Batch 5:  0.178453 0.733
+    Epoch  1, CIFAR-10 Batch 1:  2.17418 0.258
+    Epoch  1, CIFAR-10 Batch 2:  1.89131 0.3228
+    Epoch  1, CIFAR-10 Batch 3:  1.64358 0.377
+    Epoch  1, CIFAR-10 Batch 4:  1.58045 0.42
+    Epoch  1, CIFAR-10 Batch 5:  1.56963 0.4292
+    Epoch  2, CIFAR-10 Batch 1:  1.54586 0.4666
+    Epoch  2, CIFAR-10 Batch 2:  1.42333 0.4674
+    Epoch  2, CIFAR-10 Batch 3:  1.31083 0.4686
+    Epoch  2, CIFAR-10 Batch 4:  1.31937 0.5128
+    Epoch  2, CIFAR-10 Batch 5:  1.32095 0.526
+    Epoch  3, CIFAR-10 Batch 1:  1.33398 0.5416
+    Epoch  3, CIFAR-10 Batch 2:  1.23915 0.5372
+    Epoch  3, CIFAR-10 Batch 3:  1.14554 0.5422
+    Epoch  3, CIFAR-10 Batch 4:  1.12836 0.5546
+    Epoch  3, CIFAR-10 Batch 5:  1.21002 0.5658
+    Epoch  4, CIFAR-10 Batch 1:  1.21794 0.5702
+    Epoch  4, CIFAR-10 Batch 2:  1.14143 0.5704
+    Epoch  4, CIFAR-10 Batch 3:  1.05564 0.5798
+    Epoch  4, CIFAR-10 Batch 4:  1.00022 0.6014
+    Epoch  4, CIFAR-10 Batch 5:  1.08161 0.5978
+    Epoch  5, CIFAR-10 Batch 1:  1.12696 0.603
+    Epoch  5, CIFAR-10 Batch 2:  1.01754 0.6042
+    Epoch  5, CIFAR-10 Batch 3:  0.949764 0.6148
+    Epoch  5, CIFAR-10 Batch 4:  0.923416 0.6146
+    Epoch  5, CIFAR-10 Batch 5:  1.01087 0.6198
+    Epoch  6, CIFAR-10 Batch 1:  1.05416 0.6142
+    Epoch  6, CIFAR-10 Batch 2:  0.950968 0.6322
+    Epoch  6, CIFAR-10 Batch 3:  0.872351 0.63
+    Epoch  6, CIFAR-10 Batch 4:  0.865606 0.6376
+    Epoch  6, CIFAR-10 Batch 5:  0.914406 0.6468
+    Epoch  7, CIFAR-10 Batch 1:  0.962058 0.6478
+    Epoch  7, CIFAR-10 Batch 2:  0.912675 0.6268
+    Epoch  7, CIFAR-10 Batch 3:  0.86336 0.6404
+    Epoch  7, CIFAR-10 Batch 4:  0.83486 0.6438
+    Epoch  7, CIFAR-10 Batch 5:  0.849887 0.6598
+    Epoch  8, CIFAR-10 Batch 1:  0.926978 0.6496
+    Epoch  8, CIFAR-10 Batch 2:  0.833552 0.6654
+    Epoch  8, CIFAR-10 Batch 3:  0.76524 0.6634
+    Epoch  8, CIFAR-10 Batch 4:  0.731668 0.6704
+    Epoch  8, CIFAR-10 Batch 5:  0.795204 0.6678
+    Epoch  9, CIFAR-10 Batch 1:  0.875858 0.6724
+    Epoch  9, CIFAR-10 Batch 2:  0.80453 0.6646
+    Epoch  9, CIFAR-10 Batch 3:  0.735106 0.677
+    Epoch  9, CIFAR-10 Batch 4:  0.701202 0.6728
+    Epoch  9, CIFAR-10 Batch 5:  0.739197 0.6792
+    Epoch 10, CIFAR-10 Batch 1:  0.78771 0.6786
+    Epoch 10, CIFAR-10 Batch 2:  0.758499 0.6826
+    Epoch 10, CIFAR-10 Batch 3:  0.677896 0.691
+    Epoch 10, CIFAR-10 Batch 4:  0.636346 0.6832
+    Epoch 10, CIFAR-10 Batch 5:  0.703204 0.6872
+    Epoch 11, CIFAR-10 Batch 1:  0.74469 0.6894
+    Epoch 11, CIFAR-10 Batch 2:  0.712101 0.6886
+    Epoch 11, CIFAR-10 Batch 3:  0.659332 0.6862
+    Epoch 11, CIFAR-10 Batch 4:  0.619165 0.6842
+    Epoch 11, CIFAR-10 Batch 5:  0.668411 0.6958
+    Epoch 12, CIFAR-10 Batch 1:  0.722821 0.6962
+    Epoch 12, CIFAR-10 Batch 2:  0.666356 0.6844
+    Epoch 12, CIFAR-10 Batch 3:  0.648884 0.6896
+    Epoch 12, CIFAR-10 Batch 4:  0.578291 0.6978
+    Epoch 12, CIFAR-10 Batch 5:  0.613525 0.6992
+    Epoch 13, CIFAR-10 Batch 1:  0.691871 0.702
+    Epoch 13, CIFAR-10 Batch 2:  0.674262 0.6712
+    Epoch 13, CIFAR-10 Batch 3:  0.617314 0.6954
+    Epoch 13, CIFAR-10 Batch 4:  0.54744 0.7082
+    Epoch 13, CIFAR-10 Batch 5:  0.605175 0.7018
+    Epoch 14, CIFAR-10 Batch 1:  0.695072 0.683
+    Epoch 14, CIFAR-10 Batch 2:  0.634088 0.696
+    Epoch 14, CIFAR-10 Batch 3:  0.646989 0.6886
+    Epoch 14, CIFAR-10 Batch 4:  0.515303 0.7086
+    Epoch 14, CIFAR-10 Batch 5:  0.598033 0.7004
+    Epoch 15, CIFAR-10 Batch 1:  0.642724 0.7036
+    Epoch 15, CIFAR-10 Batch 2:  0.597932 0.7012
+    Epoch 15, CIFAR-10 Batch 3:  0.570637 0.7048
+    Epoch 15, CIFAR-10 Batch 4:  0.499778 0.7078
+    Epoch 15, CIFAR-10 Batch 5:  0.542088 0.7058
+    Epoch 16, CIFAR-10 Batch 1:  0.647928 0.7008
+    Epoch 16, CIFAR-10 Batch 2:  0.596136 0.6972
+    Epoch 16, CIFAR-10 Batch 3:  0.589553 0.6982
+    Epoch 16, CIFAR-10 Batch 4:  0.491102 0.7102
+    Epoch 16, CIFAR-10 Batch 5:  0.511343 0.7108
+    Epoch 17, CIFAR-10 Batch 1:  0.628615 0.6992
+    Epoch 17, CIFAR-10 Batch 2:  0.590861 0.6938
+    Epoch 17, CIFAR-10 Batch 3:  0.514383 0.715
+    Epoch 17, CIFAR-10 Batch 4:  0.465944 0.7198
+    Epoch 17, CIFAR-10 Batch 5:  0.487415 0.72
+    Epoch 18, CIFAR-10 Batch 1:  0.581234 0.7102
+    Epoch 18, CIFAR-10 Batch 2:  0.528197 0.7082
+    Epoch 18, CIFAR-10 Batch 3:  0.517984 0.7158
+    Epoch 18, CIFAR-10 Batch 4:  0.448379 0.7244
+    Epoch 18, CIFAR-10 Batch 5:  0.466885 0.719
+    Epoch 19, CIFAR-10 Batch 1:  0.557558 0.7158
+    Epoch 19, CIFAR-10 Batch 2:  0.485483 0.7176
+    Epoch 19, CIFAR-10 Batch 3:  0.466662 0.7118
+    Epoch 19, CIFAR-10 Batch 4:  0.432227 0.719
+    Epoch 19, CIFAR-10 Batch 5:  0.449991 0.7208
+    Epoch 20, CIFAR-10 Batch 1:  0.542111 0.7226
+    Epoch 20, CIFAR-10 Batch 2:  0.507359 0.699
+    Epoch 20, CIFAR-10 Batch 3:  0.450182 0.7198
+    Epoch 20, CIFAR-10 Batch 4:  0.398063 0.726
+    Epoch 20, CIFAR-10 Batch 5:  0.416526 0.7272
+    Epoch 21, CIFAR-10 Batch 1:  0.519584 0.7102
+    Epoch 21, CIFAR-10 Batch 2:  0.467399 0.7084
+    Epoch 21, CIFAR-10 Batch 3:  0.433236 0.7142
+    Epoch 21, CIFAR-10 Batch 4:  0.391417 0.7226
+    Epoch 21, CIFAR-10 Batch 5:  0.42498 0.7218
+    Epoch 22, CIFAR-10 Batch 1:  0.516996 0.7216
+    Epoch 22, CIFAR-10 Batch 2:  0.4438 0.7234
+    Epoch 22, CIFAR-10 Batch 3:  0.397908 0.7256
+    Epoch 22, CIFAR-10 Batch 4:  0.365478 0.7238
+    Epoch 22, CIFAR-10 Batch 5:  0.401759 0.7214
+    Epoch 23, CIFAR-10 Batch 1:  0.526016 0.7132
+    Epoch 23, CIFAR-10 Batch 2:  0.451511 0.7196
+    Epoch 23, CIFAR-10 Batch 3:  0.385383 0.7204
+    Epoch 23, CIFAR-10 Batch 4:  0.36932 0.7208
+    Epoch 23, CIFAR-10 Batch 5:  0.381374 0.7292
+    Epoch 24, CIFAR-10 Batch 1:  0.517261 0.7204
+    Epoch 24, CIFAR-10 Batch 2:  0.404438 0.7268
+    Epoch 24, CIFAR-10 Batch 3:  0.418854 0.7182
+    Epoch 24, CIFAR-10 Batch 4:  0.366863 0.721
+    Epoch 24, CIFAR-10 Batch 5:  0.3707 0.7194
+    Epoch 25, CIFAR-10 Batch 1:  0.46969 0.7174
+    Epoch 25, CIFAR-10 Batch 2:  0.383327 0.7256
+    Epoch 25, CIFAR-10 Batch 3:  0.358435 0.7294
+    Epoch 25, CIFAR-10 Batch 4:  0.358246 0.7166
+    Epoch 25, CIFAR-10 Batch 5:  0.356147 0.7236
+    Epoch 26, CIFAR-10 Batch 1:  0.445827 0.7256
+    Epoch 26, CIFAR-10 Batch 2:  0.402569 0.72
+    Epoch 26, CIFAR-10 Batch 3:  0.360069 0.73
+    Epoch 26, CIFAR-10 Batch 4:  0.347298 0.7152
+    Epoch 26, CIFAR-10 Batch 5:  0.347091 0.7248
+    Epoch 27, CIFAR-10 Batch 1:  0.453929 0.723
+    Epoch 27, CIFAR-10 Batch 2:  0.351294 0.7322
+    Epoch 27, CIFAR-10 Batch 3:  0.329644 0.7398
+    Epoch 27, CIFAR-10 Batch 4:  0.345249 0.7226
+    Epoch 27, CIFAR-10 Batch 5:  0.323675 0.7316
+    Epoch 28, CIFAR-10 Batch 1:  0.415203 0.721
+    Epoch 28, CIFAR-10 Batch 2:  0.371486 0.7228
+    Epoch 28, CIFAR-10 Batch 3:  0.340016 0.7334
+    Epoch 28, CIFAR-10 Batch 4:  0.319217 0.7262
+    Epoch 28, CIFAR-10 Batch 5:  0.334795 0.7242
+    Epoch 29, CIFAR-10 Batch 1:  0.428957 0.7106
+    Epoch 29, CIFAR-10 Batch 2:  0.370579 0.7168
+    Epoch 29, CIFAR-10 Batch 3:  0.378746 0.7388
+    Epoch 29, CIFAR-10 Batch 4:  0.32033 0.7232
+    Epoch 29, CIFAR-10 Batch 5:  0.311448 0.7318
+    Epoch 30, CIFAR-10 Batch 1:  0.419881 0.708
+    Epoch 30, CIFAR-10 Batch 2:  0.322512 0.736
+    Epoch 30, CIFAR-10 Batch 3:  0.31532 0.7312
+    Epoch 30, CIFAR-10 Batch 4:  0.278237 0.7322
+    Epoch 30, CIFAR-10 Batch 5:  0.290007 0.7312
+    Epoch 31, CIFAR-10 Batch 1:  0.38046 0.7234
+    Epoch 31, CIFAR-10 Batch 2:  0.339483 0.7314
+    Epoch 31, CIFAR-10 Batch 3:  0.284596 0.738
+    Epoch 31, CIFAR-10 Batch 4:  0.256927 0.7408
+    Epoch 31, CIFAR-10 Batch 5:  0.264829 0.7328
+    Epoch 32, CIFAR-10 Batch 1:  0.353531 0.7196
+    Epoch 32, CIFAR-10 Batch 2:  0.344512 0.7264
+    Epoch 32, CIFAR-10 Batch 3:  0.275394 0.7372
+    Epoch 32, CIFAR-10 Batch 4:  0.250398 0.7348
+    Epoch 32, CIFAR-10 Batch 5:  0.263489 0.7318
+    Epoch 33, CIFAR-10 Batch 1:  0.341413 0.722
+    Epoch 33, CIFAR-10 Batch 2:  0.349035 0.7186
+    Epoch 33, CIFAR-10 Batch 3:  0.294038 0.7286
+    Epoch 33, CIFAR-10 Batch 4:  0.278225 0.7366
+    Epoch 33, CIFAR-10 Batch 5:  0.250861 0.7402
+    Epoch 34, CIFAR-10 Batch 1:  0.324521 0.7234
+    Epoch 34, CIFAR-10 Batch 2:  0.369276 0.7194
+    Epoch 34, CIFAR-10 Batch 3:  0.306543 0.7272
+    Epoch 34, CIFAR-10 Batch 4:  0.284653 0.7214
+    Epoch 34, CIFAR-10 Batch 5:  0.263262 0.7314
+    Epoch 35, CIFAR-10 Batch 1:  0.323842 0.7224
+    Epoch 35, CIFAR-10 Batch 2:  0.376572 0.7226
+    Epoch 35, CIFAR-10 Batch 3:  0.325775 0.714
+    Epoch 35, CIFAR-10 Batch 4:  0.266008 0.733
+    Epoch 35, CIFAR-10 Batch 5:  0.255277 0.7346
+    Epoch 36, CIFAR-10 Batch 1:  0.326463 0.7228
+    Epoch 36, CIFAR-10 Batch 2:  0.316385 0.7308
+    Epoch 36, CIFAR-10 Batch 3:  0.269 0.7256
+    Epoch 36, CIFAR-10 Batch 4:  0.251647 0.7342
+    Epoch 36, CIFAR-10 Batch 5:  0.224504 0.7382
+    Epoch 37, CIFAR-10 Batch 1:  0.320176 0.7266
+    Epoch 37, CIFAR-10 Batch 2:  0.261291 0.7406
+    Epoch 37, CIFAR-10 Batch 3:  0.24623 0.7318
+    Epoch 37, CIFAR-10 Batch 4:  0.233286 0.7338
+    Epoch 37, CIFAR-10 Batch 5:  0.225085 0.7356
+    Epoch 38, CIFAR-10 Batch 1:  0.285046 0.731
+    Epoch 38, CIFAR-10 Batch 2:  0.267369 0.7332
+    Epoch 38, CIFAR-10 Batch 3:  0.288629 0.7184
+    Epoch 38, CIFAR-10 Batch 4:  0.229647 0.732
+    Epoch 38, CIFAR-10 Batch 5:  0.214168 0.7354
+    Epoch 39, CIFAR-10 Batch 1:  0.267609 0.7278
+    Epoch 39, CIFAR-10 Batch 2:  0.274509 0.7384
+    Epoch 39, CIFAR-10 Batch 3:  0.264205 0.7302
+    Epoch 39, CIFAR-10 Batch 4:  0.252471 0.7308
+    Epoch 39, CIFAR-10 Batch 5:  0.224979 0.734
+    Epoch 40, CIFAR-10 Batch 1:  0.251603 0.7306
+    Epoch 40, CIFAR-10 Batch 2:  0.277763 0.7348
+    Epoch 40, CIFAR-10 Batch 3:  0.288197 0.7162
+    Epoch 40, CIFAR-10 Batch 4:  0.243268 0.7348
+    Epoch 40, CIFAR-10 Batch 5:  0.231756 0.7248
 
 
 # Checkpoint
@@ -944,7 +944,7 @@ test_model()
 ```
 
     INFO:tensorflow:Restoring parameters from ./image_classification
-    Testing Accuracy: 0.7344324469566346
+    Testing Accuracy: 0.7232766538858414
     
 
 
@@ -956,3 +956,23 @@ test_model()
 You might be wondering why you can't get an accuracy any higher. First things first, 50% isn't bad for a simple CNN.  Pure guessing would get you 10% accuracy. However, you might notice people are getting scores [well above 80%](http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#43494641522d3130).  That's because we haven't taught you all there is to know about neural networks. We still need to cover a few more techniques.
 ## Submitting This Project
 When submitting this project, make sure to run all the cells before saving the notebook.  Save the notebook file as "dlnd_image_classification.ipynb" and save it as a HTML file under "File" -> "Download as".  Include the "helper.py" and "problem_unittests.py" files in your submission.
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
